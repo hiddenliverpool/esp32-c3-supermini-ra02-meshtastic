@@ -1,14 +1,17 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "trunk.io",
-  "trunk.enableWindows": true,
-  "files.insertFinalNewline": false,
-  "files.trimFinalNewlines": false,
-  "cmake.configureOnOpen": false,
-  "[cpp]": {
-    "editor.defaultFormatter": "trunk.io"
+  "C_Cpp.default.configurationProvider": "platformio.platformio-ide",
+  "files.associations": {
+    "*.h": "cpp",
+    "*.cpp": "cpp",
+    "*.ini": "ini"
   },
-  "[powershell]": {
-    "editor.defaultFormatter": "ms-vscode.powershell"
-  }
+  "search.exclude": {
+    "**/.pio": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "**/.pio": true
+  },
+  "platformio-ide.autoRebuildAutocompleteIndex": true,
+  "platformio-ide.useBuiltinPIOCore": false
 }

@@ -2,14 +2,41 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "PlatformIO",
-      "task": "Build",
-      "problemMatcher": ["$platformio"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "label": "PlatformIO: Build"
+      "label": "Meshtastic c3ra02: Build",
+      "type": "shell",
+      "command": "pio",
+      "args": ["run", "-e", "c3ra02"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Meshtastic c3ra02: Upload",
+      "type": "shell",
+      "command": "pio",
+      "args": ["run", "-e", "c3ra02", "-t", "upload", "--upload-port", "${input:serialPort}"],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Meshtastic c3ra02: Monitor",
+      "type": "shell",
+      "command": "pio",
+      "args": ["device", "monitor", "-b", "115200", "--port", "${input:serialPort}"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Meshtastic: List Ports",
+      "type": "shell",
+      "command": "pio",
+      "args": ["device", "list"],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serialPort",
+      "type": "promptString",
+      "description": "Serial port, for example COM3 or /dev/ttyUSB0",
+      "default": "COM3"
     }
   ]
 }
