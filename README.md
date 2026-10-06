@@ -184,3 +184,4 @@ https://github.com/meshtastic/firmware
 ```
 
 Meshtastic firmware is GPL-3.0 licensed. The original license file is preserved in this repository.
+.
